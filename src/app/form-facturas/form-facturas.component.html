@@ -1,0 +1,110 @@
+<form #form="ngForm" (ngSubmit)="guardarFactura(form)" novalidate>
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Título</label>
+    <input
+      type="text"
+      class="form-control"
+      id="titulo"
+      aria-describedby="tituloHelp"
+      ngModel
+      name="titulo"
+    />
+    <div id="tituloHelp" class="form-text">Introduce el título.</div>
+  </div>
+  <div class="mb-3">
+    <label for="numPaginas" class="form-label">Número de páginas</label>
+    <input
+      type="number"
+      class="form-control"
+      id="numPaginas"
+      aria-describedby="numPaginasHelp"
+      ngModel
+      name="numPaginas"
+    />
+    <div id="numPaginasHelp" class="form-text">Introduce el número de páginas.</div>
+  </div>
+  <div class="mb-3">
+    <label for="importancia" class="form-label">Importancia</label>
+    <select class="form-select" id="importancia" name="importancia" ngModel>
+      <option value="alto">Alta</option>
+      <option value="medio">Media</option>
+      <option value="bajo">Bajo</option>
+
+    </select>
+  </div>
+  <fieldset>
+    <legend>Detalles de la factura</legend>
+    <div class="mb-3" ngModelGroup="detalles">
+      <label for="concepto" class="form-label">Concepto</label>
+      <input
+        type="text"
+        class="form-control"
+        id="concepto"
+        aria-describedby="conceptoHelp"
+        ngModel
+        name="concepto"
+      />
+      <div id="conceptoHelp" class="form-text">
+        Introduce el concepto de la factura.
+      </div>
+      <label for="importe" class="form-label">Importe</label>
+      <input
+        type="number"
+        class="form-control"
+        id="importe"
+        aria-describedby="importeHelp"
+        ngModel
+        name="importe"
+      />
+      <div id="importeHelp" class="form-text">Introduce el importe.</div>
+      <label for="nombreCliente" class="form-label">Nombre del cliente</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nombreCliente"
+        aria-describedby="nombreClienteHelp"
+        ngModel
+        name="nombreCliente"
+      />
+      <div id="nombreClienteHelp" class="form-text">Introduce el nombre del cliente.</div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Dirección de facturación</legend>
+    <div class="mb-3" ngModelGroup="direccion">
+      <label for="calle" class="form-label">Calle</label>
+      <input
+        type="text"
+        class="form-control"
+        id="calle"
+        aria-describedby="calleHelp"
+        ngModel
+        name="calle"
+      />
+      <div id="calleHelp" class="form-text">
+        Introduce el nombre de la calle.
+      </div>
+      <label for="numero" class="form-label">Número</label>
+      <input
+        type="number"
+        class="form-control"
+        id="calle"
+        aria-describedby="numeroHelp"
+        ngModel
+        name="numero"
+      />
+      <div id="calleHelp" class="form-text">Introduce el número.</div>
+      <label for="localidad" class="form-label">Localidad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="localidad"
+        aria-describedby="localidadHelp"
+        ngModel
+        name="numero"
+      />
+      <div id="calleHelp" class="form-text">Introduce la localidad.</div>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Guardar usuario</button>
+</form>
