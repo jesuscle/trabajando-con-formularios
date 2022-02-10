@@ -20,6 +20,10 @@ export class FormBasicoComponent implements OnInit {
 
   guardarUsuario(form: NgForm): void{
 
+    if(form.invalid){
+      return;
+    }
+
     console.log(form.value);
     console.log(form.value.nombre);
     console.log(form.value.apellidos);
